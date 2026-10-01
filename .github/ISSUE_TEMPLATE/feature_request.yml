@@ -1,0 +1,16 @@
+name: Feature request / 功能建议
+description: Suggest a scoped feature or site adapter.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Use case / 使用场景
+      description: Describe the problem without personal information or private URLs.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior / 希望的行为
+      description: Note any new permissions, background processing or privacy implications.

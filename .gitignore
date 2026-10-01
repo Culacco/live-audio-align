@@ -1,0 +1,16 @@
+.DS_Store
+node_modules/
+dist/
+coverage/
+*.log
+*.zip
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+browser-profile*/
+recordings/
+*.wav
+*.mp3
+*.m4a

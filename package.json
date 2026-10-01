@@ -1,0 +1,13 @@
+{
+  "name": "live-audio-align-extension",
+  "version": "0.6.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check.mjs",
+    "package": "node scripts/package.mjs"
+  }
+}

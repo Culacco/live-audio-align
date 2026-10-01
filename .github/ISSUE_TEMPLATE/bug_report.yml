@@ -1,0 +1,38 @@
+name: Bug report / 问题反馈
+description: Report playback, alignment or cleanup problems without private data.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "请勿附带私人直播 URL、查询参数、账号、Cookie、令牌或录音。安全问题参见 SECURITY.md。"
+  - type: input
+    id: version
+    attributes:
+      label: Extension version / 扩展版本
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and OS / 浏览器与系统
+      placeholder: Chrome version, macOS/Windows/Linux
+    validations:
+      required: true
+  - type: input
+    id: domains
+    attributes:
+      label: Source domains only / 只填来源域名
+      placeholder: www.yangshipin.cn + live.bilibili.com
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction and expected behavior / 复现步骤与预期
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and sanitized error / 实际现象和脱敏错误
+      description: Also mention whether Stop released capture and whether alignment was manual or automatic.
+    validations:
+      required: true

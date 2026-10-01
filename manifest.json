@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Live Audio Align",
+  "version": "0.6.0",
+  "description": "Use TV Team or Yangshipin as the live picture while delaying Bilibili commentary locally.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "activeTab",
+    "offscreen",
+    "scripting",
+    "tabCapture"
+  ],
+  "host_permissions": [
+    "https://webplayer.tv.in/*",
+    "https://www.yangshipin.cn/*",
+    "https://live.bilibili.com/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src 'none'"
+  },
+  "action": {
+    "default_title": "打开直播对时控制台",
+    "default_popup": "sidepanel.html"
+  }
+}

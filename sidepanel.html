@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Live Audio Align</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <div class="signal-grid" aria-hidden="true"></div>
+    <main class="shell">
+      <header class="masthead reveal reveal-1">
+        <div>
+          <p class="eyebrow"><span class="live-dot"></span> LOCAL SIGNAL LAB</p>
+          <h1>画面<br /><em>不等人</em></h1>
+        </div>
+        <div class="edition">
+          <span>ARC + CHROME</span>
+          <strong>06</strong>
+        </div>
+      </header>
+
+      <section class="signal-pair reveal reveal-2" aria-labelledby="sources-title">
+        <div class="section-label">
+          <span>01</span>
+          <h2 id="sources-title">信号源</h2>
+        </div>
+
+        <article class="source-card" id="tv-card">
+          <div class="source-index">A</div>
+          <div class="source-copy">
+            <p>PICTURE / REFERENCE</p>
+            <h3>画面源</h3>
+            <span id="tv-title">未连接</span>
+          </div>
+          <span class="status-pill" id="tv-status">OFF</span>
+        </article>
+
+        <div class="sync-rail" aria-hidden="true">
+          <span></span><i></i><span></span>
+        </div>
+
+        <article class="source-card warm" id="bilibili-card">
+          <div class="source-index">B</div>
+          <div class="source-copy">
+            <p>AUDIO / LIVE EDGE</p>
+            <h3>中文解说</h3>
+            <span id="bilibili-title">未连接</span>
+          </div>
+          <span class="status-pill" id="bilibili-status">OFF</span>
+        </article>
+
+        <div class="page-context" id="page-context">
+          <span>当前页</span>
+          <strong id="current-page">正在识别…</strong>
+        </div>
+        <button class="connect-action" id="connect-button" disabled>
+          <span>连接当前直播页</span>
+          <b>＋</b>
+        </button>
+
+        <p class="connect-help">
+          在 TV Team 或央视频页面连接画面源，再到 Bilibili 直播页连接中文音频。Bilibili 始终保持最新，延迟只发生在扩展里。
+        </p>
+      </section>
+
+      <section class="alignment-panel reveal reveal-3" aria-labelledby="alignment-title">
+        <div class="section-label">
+          <span>02</span>
+          <h2 id="alignment-title">一次对齐</h2>
+        </div>
+
+        <div class="delay-stage">
+          <p>中文音频延迟</p>
+          <div class="delay-readout">
+            <strong id="delay-value">00.000</strong><span>s</span>
+          </div>
+          <div class="confidence-line">
+            <span id="phase-label">IDLE</span>
+            <span id="confidence-label">匹配评分 —</span>
+          </div>
+        </div>
+
+        <div class="progress-track" aria-hidden="true">
+          <span id="progress-bar"></span>
+        </div>
+        <p class="state-message" id="state-message">先连接两个直播标签页</p>
+        <p class="buffer-note" id="buffer-note"></p>
+
+        <button class="primary-action" id="start-button" disabled>
+          <span>开始自动对齐</span>
+          <b>→</b>
+        </button>
+      </section>
+
+      <section class="trim-panel reveal reveal-4" aria-labelledby="trim-title">
+        <div class="section-label">
+          <span>03</span>
+          <h2 id="trim-title">耳朵微调</h2>
+        </div>
+
+        <div class="trim-grid" id="trim-grid">
+          <button data-delta="-500"><span>−</span>500</button>
+          <button data-delta="-100"><span>−</span>100</button>
+          <button data-delta="-50"><span>−</span>50</button>
+          <button data-delta="50"><span>+</span>50</button>
+          <button data-delta="100"><span>+</span>100</button>
+          <button data-delta="500"><span>+</span>500</button>
+        </div>
+        <p class="trim-hint">
+          中文声音比画面<strong>早</strong>：点 − ｜ 比画面<strong>晚</strong>：点 +
+        </p>
+        <p class="unit-label">MILLISECONDS · ± 表示中文音频移动方向</p>
+      </section>
+
+      <footer class="session-footer reveal reveal-4">
+        <button class="stop-button" id="stop-button">停止并释放全部资源</button>
+        <p>STOP = FULL SHUTDOWN · LOCAL ONLY</p>
+      </footer>
+    </main>
+
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+</html>
